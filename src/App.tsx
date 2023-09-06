@@ -1,20 +1,26 @@
 import React from 'react';
 import './App.css';
-import Login from '../src/pages/login/login'
-import {UserContext} from './contexts/User'
+// import Login from '../src/pages/login/login'
+import {Counter, ProductCard, User, BlogPost, Post } from '../src/pages/test'
+// import {UserContext} from './contexts/User'
 
-const User = {
-  role: 'user',
-  name: '',
-}
+// const User = {
+//   role: 'user',
+//   name: '',
+// }
 
 function App() {
   return (
-    <div className='rootStyle'>
-      <UserContext.Provider value={User}>
-        <Login />
-      </UserContext.Provider>
-    </div>
+
+        <div className="App">
+          <header className="App-header">
+            {/* <Counter /> */}
+            {/* <ProductCard id={''}/> */}
+            {/* <User /> */}
+            {/* <BlogPost /> */}
+            <Post />
+          </header>
+        </div>
   );
 }
 
@@ -39,3 +45,11 @@ export default App;
 //         </a>
 //       </header>
 //     </div> */}
+
+
+// {/* <div className='rootStyle'>
+// <UserContext.Provider value={User}>
+//   {/* <Login /> */}
+
+// </UserContext.Provider>
+// </div> */}
