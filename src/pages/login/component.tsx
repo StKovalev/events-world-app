@@ -4,7 +4,7 @@ import withLogger from '../../hocs/withLogger'
 import './styles.css';
 import {UserContext} from '../../contexts/User'
 
-const Login = () => {
+export const Login = () => {
     const value = useContext(UserContext)
 
     console.log('UserContext', value)
@@ -14,7 +14,7 @@ const Login = () => {
     
     const [userPass1, setUserPass1] = useState<string>('')
     const [userPass2, setUserPass2] = useState<string>('')
-    const [isPassError, setPassError] = useState<boolean>(false)
+    // const [isPassError, setPassError] = useState<string>('false')
 
     
     
@@ -25,9 +25,9 @@ const Login = () => {
 
     const handleChangePass2 = (event: any ) => {
         if (userPass1 !== event.target.value) {
-            setPassError(true)
+            // setPassError(true)
         } else {
-            setPassError(false)
+            // setPassError(false)
         }
         
         console.log('userPass2 ---- before', userPass2)
@@ -36,16 +36,23 @@ const Login = () => {
         console.log('userPass1', userPass1)
         console.log('userPass2', userPass2)
 
-        setTimeout(() => {
-            if (userPass1 !== userPass2) {
-                setPassError(true)
-            } else {
-                setPassError(false)
-            }
-            console.log('userPass1 ---- after', userPass1)
-            console.log('userPass2 ---- after', userPass2)
 
-        }, 3000)
+        // this.setState('asdasdasd', () => { console.log()})
+
+        // setPassError(prev => isPassError + 111 )
+
+
+
+        // setTimeout(() => {
+        //     if (userPass1 !== userPass2) {
+        //         setPassError(true)
+        //     } else {
+        //         setPassError(false)
+        //     }
+        //     console.log('userPass1 ---- after', userPass1)
+        //     console.log('userPass2 ---- after', userPass2)
+
+        // }, 3000)
 
         
     } 
@@ -125,7 +132,7 @@ const Login = () => {
                             placeholder="Введите пароль повторно" 
                             onChange={(event: any) => handleChangePass2(event)}
                         />
-                        {isPassError && <div style={{color: 'red'}}>Пароли не совпадают</div>}
+                        {/* {isPassError && <div style={{color: 'red'}}>Пароли не совпадают</div>} */}
                         <button>Регистрация</button>
                     </form>
                 </div>
@@ -178,4 +185,4 @@ const Login = () => {
     )
 }
 
-export default withLogger(Login)
+// export default withLogger(Login)
