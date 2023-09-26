@@ -1,2 +1,2 @@
-// export Login  from './login'
+export { Login }   from './component'
 // export { LoginMax } from './login-max'
