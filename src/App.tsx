@@ -4,6 +4,9 @@ import { Link, NavLink, Routes, Route }  from 'react-router-dom';
 import { About, Contacts, EventsCatalog, Main, NotFound } from './pages'
 import { RequireAuth } from './hocs/requireAuth'
 
+import { useWindowSize } from './hooks/useWindowSize'
+import { useDebounce } from './hooks/useDebounce'
+
 import './App.css';
 // import Login from '../src/pages/login/login'
 // import {Counter, ProductCard, User, BlogPost, Post } from '../src/pages/test'
@@ -23,6 +26,12 @@ const ROUTES = {
 }
 
 function App() {
+  const windowSize = useWindowSize()
+  // console.log('windowSize', windowSize)
+  useDebounce(() => {
+    console.log('windowSize', windowSize)
+  }, 2000, [windowSize])
+
 
   // TODO : доработать стили навигации
   return (
